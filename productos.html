@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Devolveme</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --primary-blue: #004e92;
+            --text-main: #1a202c;
+            --text-secondary: #4a5568;
+            --white: #ffffff;
+            --radius-xl: 20px;
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .back-link {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .product-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .product-hero h1 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        @media(min-width: 768px) {
+            .product-showcase {
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
+        }
+
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .product-img {
+            width: 100%;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .product-specs ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-specs li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .product-specs li::before {
+            content: "•";
+            color: var(--primary-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-xl);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="back-link">← Volver</a>
+            <img src="logo.png" alt="Devolveme Logo" class="logo">
+        </header>
+
+        <section class="product-hero">
+            <h1>Llavero DEV.1</h1>
+            <p>Seguridad inteligente para tus objetos más valiosos.</p>
+        </section>
+
+        <section class="product-showcase">
+            <div class="product-images">
+                <img src="assets/dev1_01.jpg" alt="Llavero Devolveme DEV.1 Frente" class="product-img">
+                <img src="assets/dev1_02.jpg" alt="Llavero Devolveme DEV.1 Dorso" class="product-img">
+            </div>
+            <div class="product-specs">
+                <h2>Especificaciones</h2>
+                <ul>
+                    <li><strong>Certificado Apple Find My:</strong> Rastreá tu objeto desde la app "Encontrar" en tu
+                        iPhone, iPad o Mac.</li>
+                    <li><strong>Tracker Bluetooth:</strong> Conexión estable y de bajo consumo.</li>
+                    <li><strong>Sistema Híbrido QR:</strong> Si alguien sin iPhone lo encuentra, puede escanear el
+                        código QR único para contactarte.</li>
+                    <li><strong>Alerta Sonora:</strong> Hacé sonar tu llavero desde la app para encontrarlo cerca.</li>
+                    <li><strong>Diseño Compacto:</strong> Elegante, duradero y fácil de colocar en cualquier llavero o
+                        mochila.</li>
+                </ul>
+                <div class="cta-section">
+                    <a href="https://wa.me/5491132466022?text=Hola,%20me%20interesa%20el%20llavero%20DEV.1"
+                        class="btn">Solicitar Ahora</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

@@ -374,66 +374,56 @@
 
         <!-- 4. Info Cards -->
         <section class="cards-grid">
-            <!-- Card 1: Historia -->
-            <div class="card">
+            <!-- Card 1: Productos -->
+            <a href="productos.html" class="card" style="text-decoration: none; color: inherit;">
                 <div class="card-icon">
-                    <!-- Clock Icon -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
+                    <!-- Tag Icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
                     </svg>
                 </div>
-                <h3>Historia</h3>
-                <p>Devolveme nació de algo simple: perder cosas importantes pasa más de lo que creemos. Llaves,
-                    mochilas, objetos con valor real y emocional. En vez de resignarnos, creamos un sistema que conecta
-                    a quien encuentra con quien perdió, de forma rápida y humana.</p>
-            </div>
+                <h3>Productos</h3>
+                <p>Conocé el Llavero DEV.1. Rastreador Bluetooth certificado por Apple Find My y sistema de recuperación
+                    QR.</p>
+            </a>
 
-            <!-- Card 2: Misión -->
-            <div class="card">
+            <!-- Card 2: Tecnología -->
+            <a href="tecnologia.html" class="card" style="text-decoration: none; color: inherit;">
                 <div class="card-icon">
-                    <!-- Target Icon -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="10" />
-                        <circle cx="12" cy="12" r="6" />
-                        <circle cx="12" cy="12" r="2" />
+                    <!-- Smartphone/Tech Icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
                     </svg>
                 </div>
-                <h3>Misión</h3>
-                <p>Facilitar la devolución de objetos perdidos usando tecnología simple, accesible y confiable, ayudando
-                    a que las cosas vuelvan a donde pertenecen.</p>
-            </div>
+                <h3>Tecnología</h3>
+                <p>Sistema QR y NFC sin apps intermediarias. Notificaciones instantáneas y protección de identidad.</p>
+            </a>
 
-            <!-- Card 3: Visión -->
-            <div class="card">
+            <!-- Card 3: Compromisos Sociales -->
+            <a href="compromisos.html" class="card" style="text-decoration: none; color: inherit;">
                 <div class="card-icon">
-                    <!-- Lightbulb Icon -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="9" y1="18" x2="15" y2="18" />
-                        <line x1="10" y1="22" x2="14" y2="22" />
+                    <!-- Heart/Hands Icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path
-                            d="M15.09 14c.18-.9.93-1.54 1.86-1.54.96 0 1.7.94 1.48 1.91-.4 1.8-2.67 5.63-6.43 5.63-3.76 0-6.03-3.83-6.43-5.63-.22-.97.52-1.91 1.48-1.91.93 0 1.68.64 1.86 1.54" />
-                        <path d="M12 2v4" />
-                        <path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
                     </svg>
                 </div>
-                <h3>Visión</h3>
-                <p>Construir una red donde devolver algo perdido sea lo normal, no la excepción. Un sistema que escale,
-                    conecte personas y transforme un problema cotidiano en una buena acción.</p>
-            </div>
+                <h3>Compromisos Sociales</h3>
+                <p>Tecnología con propósito. Apoyamos el desarrollo de soluciones para adultos mayores y comunidades con
+                    necesidades especiales.</p>
+            </a>
         </section>
 
         <!-- 5. Instagram Section -->
         <section class="instagram-section">
             <h2>Seguinos en Instagram</h2>
             <a href="https://www.instagram.com/devolveme_la" target="_blank" class="ig-handle">@devolveme_la</a>
-
-            <div class="ig-grid">
-                <div class="ig-placeholder"></div>
-                <div class="ig-placeholder"></div>
-                <div class="ig-placeholder"></div>
-                <div class="ig-placeholder"></div>
-            </div>
 
             <a href="https://www.instagram.com/devolveme_la?igsh=MTcxNG82bWVjN2l3" target="_blank"
                 class="btn-secondary">
@@ -472,8 +462,10 @@
             position: fixed;
             bottom: 90px;
             right: 20px;
-            width: 350px;
-            height: 500px;
+            width: 380px;
+            height: 600px;
+            max-width: 90vw;
+            max-height: 80vh;
             background-color: white;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -588,7 +580,8 @@
         </div>
         <div class="chat-messages" id="chat-messages">
             <!-- Messages go here -->
-            <div class="message msg-agent">Hola, soy el asistente virtual de Devolveme. ¿En qué puedo ayudarte?</div>
+            <div class="message msg-agent">Hola, soy el asistente virtual de Devolveme. Te recomiendo contactarnos
+                directamente por WhatsApp o Telegram para una respuesta más rápida. ¿En qué puedo ayudarte?</div>
         </div>
         <div class="chat-input-area">
             <input type="text" class="chat-input" id="chat-input" placeholder="Escribe un mensaje...">

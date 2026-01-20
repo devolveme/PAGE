@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compromisos Sociales - Devolveme</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --primary-blue: #004e92;
+            --text-main: #1a202c;
+            --text-secondary: #4a5568;
+            --white: #ffffff;
+            --radius-xl: 20px;
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .back-link {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .social-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .social-hero h1 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+        }
+
+        .content-card p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="back-link">← Volver</a>
+            <img src="logo.png" alt="Devolveme Logo" class="logo">
+        </header>
+
+        <section class="social-hero">
+            <h1>Nuestro Compromiso Social</h1>
+        </section>
+
+        <section class="content-card">
+            <p>En Devolveme, destinamos parte de nuestros recursos al desarrollo de nuevas tecnologías.</p>
+            <br>
+            <p>Nos enfocamos especialmente en crear soluciones que brinden ayuda, autonomía y seguridad a
+                <strong>personas de la tercera edad</strong> y <strong>comunidades con necesidades especiales</strong>.
+            </p>
+            <br>
+            <p>Creemos que la tecnología debe ser una herramienta de inclusión y cuidado para todos.</p>
+        </section>
+    </div>
+</body>
+
+</html>

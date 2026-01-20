@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología - Devolveme</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f0f4f8;
+            --primary-blue: #004e92;
+            --text-main: #1a202c;
+            --text-secondary: #4a5568;
+            --white: #ffffff;
+            --radius-xl: 20px;
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .back-link {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .tech-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .tech-hero h1 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-blue);
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="back-link">← Volver</a>
+            <img src="logo.png" alt="Devolveme Logo" class="logo">
+        </header>
+
+        <section class="tech-hero">
+            <h1>Sistema Devolveme</h1>
+            <p>Innovación simple para problemas complejos.</p>
+        </section>
+
+        <section class="feature-grid">
+            <div class="feature-card">
+                <h3>Sin Aplicaciones Intermediarias</h3>
+                <p>La barrera principal para recuperar un objeto es obligar a quien lo encuentra a descargar una app.
+                    Con Devolveme, no es necesario. El sistema funciona con cualquier cámara de smartphone estándar o
+                    lector NFC.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Identificación Única (UID)</h3>
+                <p>Cada objeto protegido tiene un código único. Este código vincula el objeto con su dueño de forma
+                    segura en nuestra base de datos, sin exponer datos personales en el objeto físico.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Comunicación Instantánea</h3>
+                <p>Al escanear el código, nuestra plataforma genera un puente de comunicación inmediato (vía WhatsApp,
+                    Telegram o Email) entre las partes, coordinando la devolución en minutos.</p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
