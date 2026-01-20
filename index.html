@@ -4,84 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devolveme - Recuperación de Objetos</title>
+    <title>Devolveme - Recuperamos lo importante</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary-blue: #0056b3;
-            --background-blue: #1B2631;
-            /* Azul Marino Mate */
-            --text-color: #333;
+            /* Palette */
+            --bg-color: #f0f4f8;
+            --primary-blue: #004e92;
+            --text-main: #1a202c;
+            --text-secondary: #4a5568;
             --white: #ffffff;
-            --whatsapp-color: #25D366;
-            --telegram-color: #0088cc;
-            --email-color: #ea4335;
-            --text-secondary: #5e6c7e;
+
+            /* Brand Colors */
+            --whatsapp: #25D366;
+            --telegram: #0088cc;
+            --email: #EA4335;
+
+            /* Shapes & Shadows */
+            --radius-xl: 20px;
+            --radius-md: 12px;
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--background-blue);
-            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
             width: 90%;
-            max-width: 500px;
-            padding: 2.5rem 2rem;
-            background-color: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            margin: 2rem 0;
+            max-width: 1000px;
+            /* Wider for desktop cards */
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- 1. Header & Logo --- */
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
         }
 
         .logo {
             max-width: 180px;
-            margin-bottom: 2rem;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+            height: auto;
         }
 
-        h1 {
+        /* --- 2. Hero Section --- */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        .hero h1 {
             color: var(--primary-blue);
-            font-size: 1.6rem;
-            line-height: 1.4;
-            margin-bottom: 2rem;
+            font-size: 2rem;
             font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
 
-        .button-group {
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* --- 3. Contact Section (Critical) --- */
+        .contact-section {
+            width: 100%;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-btn-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            margin-bottom: 2rem;
         }
 
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
-            border-radius: 12px;
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: var(--radius-xl);
             text-decoration: none;
-            color: white;
+            color: var(--white);
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.2s, opacity 0.2s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 1.25rem;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
             transform: translateY(-2px);
+            box-shadow: var(--shadow-card);
             opacity: 0.95;
         }
 
@@ -89,188 +132,355 @@
             transform: translateY(0);
         }
 
+        .btn svg {
+            margin-right: 12px;
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
         .btn-whatsapp {
-            background-color: var(--whatsapp-color);
+            background-color: var(--whatsapp);
         }
 
         .btn-telegram {
-            background-color: var(--telegram-color);
+            background-color: var(--telegram);
         }
 
         .btn-email {
-            background-color: var(--email-color);
+            background-color: var(--email);
         }
 
-        .secondary-text {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 2rem;
+        .helper-text {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: center;
+            opacity: 0.8;
         }
 
-        /* --- About Section --- */
-        .about-section {
-            border-top: 1px solid #eef2f6;
-            padding-top: 2rem;
-            text-align: left;
+        /* --- 4. Info Cards Section --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            width: 100%;
+            margin-bottom: 4rem;
         }
 
-        .about-block {
+        /* Desktop: 3 columns */
+        @media (min-width: 768px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s;
+            height: 100%;
+            /* Equal height */
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .card-icon {
+            background-color: #f0f7ff;
+            color: var(--primary-blue);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1.5rem;
         }
 
-        .about-block h3 {
-            font-size: 0.85rem;
+        .card-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .card h3 {
             color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-            margin-top: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            font-weight: 700;
         }
 
-        .about-block p {
-            font-size: 0.9rem;
-            line-height: 1.6;
+        .card p {
             color: var(--text-secondary);
-            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        /* --- Instagram Section --- */
+        /* --- 5. Instagram Section --- */
         .instagram-section {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #eef2f6;
+            width: 100%;
+            max-width: 600px;
             text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .instagram-section p {
+        .instagram-section h2 {
+            font-size: 1.5rem;
+            color: var(--text-main);
             margin-bottom: 0.5rem;
-            color: var(--text-color);
-            font-size: 0.9rem;
         }
 
-        .instagram-link {
-            color: var(--primary-blue);
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 1.1rem;
+        .ig-handle {
             display: inline-block;
-            transition: opacity 0.2s;
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
-        .instagram-link:hover {
-            opacity: 0.8;
-            text-decoration: underline;
+        .ig-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .ig-placeholder {
+            background-color: #e2e8f0;
+            border-radius: var(--radius-md);
+            aspect-ratio: 1 / 1;
+            /* Square */
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border: 2px solid #cbd5e0;
+            border-radius: var(--radius-xl);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-secondary);
+            color: var(--text-main);
         }
 
         /* States */
         .hidden {
-            display: none;
+            display: none !important;
         }
 
         .loading {
-            font-size: 1.2rem;
-            color: var(--white);
-        }
-
-        .error-message {
-            color: #d32f2f;
-            background-color: #ffebee;
-            padding: 1rem;
-            border-radius: 8px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-color);
+            z-index: 1000;
+            color: var(--primary-blue);
+            font-weight: 600;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Loading State (visible initially) -->
-    <div id="loading" class="loading">Cargando...</div>
+    <!-- Loading -->
+    <div id="loading" class="loading">Cargando Devolveme...</div>
 
-    <!-- Main Content -->
     <div id="content" class="container hidden">
-        <img src="logo.png" alt="Devolveme Logo" class="logo" onerror="this.style.display='none'">
 
-        <h1 id="main-title">Bienvenido a Devolveme</h1>
+        <!-- 1. Header -->
+        <header class="header">
+            <!-- Usamos el logo.png que ya tenemos. Si falla, el alt hará de placeholder -->
+            <img src="logo.png" alt="Devolveme Logo" class="logo">
+        </header>
 
-        <div class="button-group">
-            <a id="btn-whatsapp" href="#" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
-            <a id="btn-telegram" href="#" class="btn btn-telegram" target="_blank">Telegram</a>
-            <a id="btn-email" href="#" class="btn btn-email">Email</a>
-        </div>
+        <!-- 2. Hero -->
+        <section class="hero">
+            <h1 id="main-title">Bienvenido a Devolveme</h1>
+            <p id="secondary-text">Estás a un paso de devolver un objeto perdido</p>
+        </section>
 
-        <p class="secondary-text" id="secondary-text">Comunicate con nosotros</p>
+        <!-- 3. Contact Buttons (Critical) -->
+        <section class="contact-section">
 
-        <!-- About Section -->
-        <div class="about-section">
-            <div class="about-block">
+            <!-- WhatsApp -->
+            <div class="contact-btn-wrapper">
+                <a id="btn-whatsapp" href="#" class="btn btn-whatsapp" target="_blank">
+                    <!-- WhatsApp Icon SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.472 14.382C17.112 14.202 15.344 13.332 15.016 13.212C14.688 13.092 14.448 13.032 14.208 13.392C13.968 13.752 13.28 14.562 13.072 14.802C12.864 15.042 12.656 15.072 12.296 14.892C11.936 14.712 10.776 14.332 9.4 13.106C8.32 12.142 7.592 10.952 7.384 10.592C7.176 10.232 7.36 10.04 7.544 9.86C7.704 9.704 7.904 9.452 8.088 9.242C8.272 9.032 8.336 8.882 8.456 8.642C8.576 8.402 8.512 8.192 8.416 8.002C8.32 7.812 7.632 6.132 7.344 5.452C7.064 4.792 6.784 4.882 6.576 4.882C6.384 4.882 6.16 4.882 5.936 4.882C5.712 4.882 5.352 4.966 5.048 5.296C4.744 5.626 3.88 6.436 3.88 8.086C3.88 9.736 5.08 11.332 5.248 11.558C5.416 11.784 7.624 15.188 10.992 16.642C13.792 17.848 14.352 17.608 14.96 17.548C15.568 17.488 16.928 16.762 17.208 15.968C17.488 15.174 17.488 14.498 17.408 14.366C17.328 14.234 17.112 14.148 16.752 13.968H17.472V14.382ZM11.976 21.998C10.224 21.998 8.584 21.548 7.128 20.75L3 22.088L4.36 18.026C3.512 16.55 3.064 14.858 3.064 13.118C3.064 8.216 7.064 4.226 11.976 4.226C16.888 4.226 20.888 8.216 20.888 13.118C20.88 18.014 16.896 21.998 11.976 21.998Z"
+                            fill="white" />
+                    </svg>
+                    WhatsApp
+                </a>
+                <span class="helper-text">Comunicate con nosotros y ayudá a devolver este objeto</span>
+            </div>
+
+            <!-- Telegram -->
+            <div class="contact-btn-wrapper">
+                <a id="btn-telegram" href="#" class="btn btn-telegram" target="_blank">
+                    <!-- Telegram Icon SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.665 3.717L2.35 10.875C1.1 11.375 1.1 12.072 2.112 12.382L6.812 13.852L17.688 6.887C18.2 6.547 18.675 6.74 18.288 7.085L9.5 15.127V15.125L9.488 15.137L9.162 19.95C9.638 19.95 9.85 19.732 10.112 19.475L12.425 17.225L17.237 20.812C18.125 21.312 18.762 21.05 18.988 19.975L22.15 4.975C22.475 3.65 21.663 3.062 20.663 3.715L20.665 3.717Z"
+                            fill="white" />
+                    </svg>
+                    Telegram
+                </a>
+                <span class="helper-text">Comunicate con nosotros y ayudá a devolver este objeto</span>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-btn-wrapper">
+                <a id="btn-email" href="#" class="btn btn-email">
+                    <!-- Envelope Icon SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                            fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M22 6L12 13L2 6" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Email
+                </a>
+                <span class="helper-text">Comunicate con nosotros y ayudá a devolver este objeto</span>
+            </div>
+        </section>
+
+        <!-- 4. Info Cards -->
+        <section class="cards-grid">
+            <!-- Card 1: Historia -->
+            <div class="card">
+                <div class="card-icon">
+                    <!-- Clock Icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                </div>
                 <h3>Historia</h3>
                 <p>Devolveme nació de algo simple: perder cosas importantes pasa más de lo que creemos. Llaves,
-                    mochilas, objetos que tienen valor real y emocional. En vez de resignarnos, decidimos crear un
-                    sistema que conecte a quien encuentra con quien perdió, de forma rápida y humana.</p>
+                    mochilas, objetos con valor real y emocional. En vez de resignarnos, creamos un sistema que conecta
+                    a quien encuentra con quien perdió, de forma rápida y humana.</p>
             </div>
-            <div class="about-block">
+
+            <!-- Card 2: Misión -->
+            <div class="card">
+                <div class="card-icon">
+                    <!-- Target Icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                    </svg>
+                </div>
                 <h3>Misión</h3>
                 <p>Facilitar la devolución de objetos perdidos usando tecnología simple, accesible y confiable, ayudando
                     a que las cosas vuelvan a donde pertenecen.</p>
             </div>
-            <div class="about-block">
+
+            <!-- Card 3: Visión -->
+            <div class="card">
+                <div class="card-icon">
+                    <!-- Lightbulb Icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="9" y1="18" x2="15" y2="18" />
+                        <line x1="10" y1="22" x2="14" y2="22" />
+                        <path
+                            d="M15.09 14c.18-.9.93-1.54 1.86-1.54.96 0 1.7.94 1.48 1.91-.4 1.8-2.67 5.63-6.43 5.63-3.76 0-6.03-3.83-6.43-5.63-.22-.97.52-1.91 1.48-1.91.93 0 1.68.64 1.86 1.54" />
+                        <path d="M12 2v4" />
+                        <path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                    </svg>
+                </div>
                 <h3>Visión</h3>
                 <p>Construir una red donde devolver algo perdido sea lo normal, no la excepción. Un sistema que escale,
-                    conecte personas y convierta un problema cotidiano en una buena acción.</p>
+                    conecte personas y transforme un problema cotidiano en una buena acción.</p>
             </div>
-        </div>
+        </section>
 
-        <!-- Instagram Section -->
-        <div class="instagram-section">
-            <p>Seguinos en Instagram</p>
+        <!-- 5. Instagram Section -->
+        <section class="instagram-section">
+            <h2>Seguinos en Instagram</h2>
+            <a href="https://www.instagram.com/devolveme_la" target="_blank" class="ig-handle">@devolveme_la</a>
+
+            <div class="ig-grid">
+                <div class="ig-placeholder"></div>
+                <div class="ig-placeholder"></div>
+                <div class="ig-placeholder"></div>
+                <div class="ig-placeholder"></div>
+            </div>
+
             <a href="https://www.instagram.com/devolveme_la?igsh=MTcxNG82bWVjN2l3" target="_blank"
-                class="instagram-link">
-                @devolveme_la
+                class="btn-secondary">
+                Ver en Instagram
             </a>
-        </div>
+        </section>
+
     </div>
 
+    <!-- Logic Script (Preserved & Adapted) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const loading = document.getElementById('loading');
             const content = document.getElementById('content');
 
-            // Elements to update dynamic text if needed
             const mainTitle = document.getElementById('main-title');
             const secondaryText = document.getElementById('secondary-text');
 
-            // Buttons
             const whatsappBtn = document.getElementById('btn-whatsapp');
             const telegramBtn = document.getElementById('btn-telegram');
             const emailBtn = document.getElementById('btn-email');
 
-            // 1. Extract Code from URL: Supports /f/CODE or /F/CODE (Case Insensitive)
+            // URL Parser (Supports Upper/Lowercase)
             const path = window.location.pathname;
             const match = path.match(/\/f\/([a-zA-Z0-9]+)/i);
             const code = match ? match[1] : null;
 
-            // 2. Configure Logic
             if (code) {
-                console.log("Modo: Código Detectado ->", code);
+                console.log("Modo Detector de Objeto Activado. Código:", code);
 
-                // Customize Links
-                // WhatsApp
+                // --- WhatsApp ---
                 const waText = encodeURIComponent(`Hola, código ${code}`);
                 whatsappBtn.href = `https://wa.me/5491132466022?text=${waText}`;
 
-                // Telegram (Start param for bot)
+                // --- Telegram ---
                 telegramBtn.href = `https://t.me/DEVOLVEME_BOT?start=${code}`;
 
-                // Email
+                // --- Email ---
                 const emailSubject = encodeURIComponent(`Código ${code}`);
                 const emailBody = encodeURIComponent(`Hola, escaneé el código ${code}`);
                 emailBtn.href = `mailto:devolveme.arg@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
             } else {
-                console.log("Modo: Visitante General");
+                console.log("Modo Visitante General");
 
-                // Customize Links for General Inquiries
+                // Fallback Content if needed (Current content is already generic enough)
+                // We keep generic links
                 const waText = encodeURIComponent("Hola, quisiera más información sobre Devolveme.");
                 whatsappBtn.href = `https://wa.me/5491132466022?text=${waText}`;
 
@@ -281,7 +491,7 @@
                 emailBtn.href = `mailto:devolveme.arg@gmail.com?subject=${emailSubject}&body=${emailBody}`;
             }
 
-            // 3. Show Interface
+            // Reveal UI
             loading.style.display = 'none';
             content.classList.remove('hidden');
         });
